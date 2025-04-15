@@ -1,0 +1,12 @@
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\bin\Release\net9.0\IdentityServer.deps.json
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\bin\Release\net9.0\IdentityServer.dll
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\bin\Release\net9.0\IdentityServer.pdb
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.csproj.AssemblyReference.cache
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.AssemblyInfoInputs.cache
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.AssemblyInfo.cs
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.dll
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\refint\IdentityServer.dll
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.pdb
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\ref\IdentityServer.dll

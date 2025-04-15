@@ -1,0 +1,254 @@
+[
+  {
+    "ContainingType": "LibraryAPI.Controllers.AuthController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LibraryAPI.Data.Dtos.LoginRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/Auth/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.AuthController",
+    "Method": "PasswordReset",
+    "RelativePath": "api/Auth/PasswordReset",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.AuthController",
+    "Method": "RegisterAsync",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LibraryAPI.Data.Dtos.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.BooksController",
+    "Method": "AddBook",
+    "RelativePath": "api/Books/AddBook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addBookDto",
+        "Type": "LibraryAPI.Data.Dtos.AddBookDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.BooksController",
+    "Method": "DeleteBook",
+    "RelativePath": "api/Books/DeleteBook/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.BooksController",
+    "Method": "GetAllBooks",
+    "RelativePath": "api/Books/GetAllBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.BooksController",
+    "Method": "GetBook",
+    "RelativePath": "api/Books/GetBook/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.BooksController",
+    "Method": "UpdateBook",
+    "RelativePath": "api/Books/UpdateBook/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedBookDto",
+        "Type": "LibraryAPI.Data.Dtos.UpdateBookDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.LibraryController",
+    "Method": "GetFeaturedBooks",
+    "RelativePath": "api/Library/GetFeaturedBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.LibraryController",
+    "Method": "LendBook",
+    "RelativePath": "api/Library/LendBook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookLend",
+        "Type": "LibraryAPI.Domain.Models.BookLend",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.LibraryController",
+    "Method": "MarkBookAsFeatured",
+    "RelativePath": "api/Library/MarkBookAsFeatured",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.LibraryController",
+    "Method": "ReturnBook",
+    "RelativePath": "api/Library/ReturnBook/{bookLendId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookLendId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.ReviewsController",
+    "Method": "CreateReview",
+    "RelativePath": "api/Reviews/CreateReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "review",
+        "Type": "LibraryAPI.Domain.Models.Review",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.ReviewsController",
+    "Method": "DeleteReview",
+    "RelativePath": "api/Reviews/DeleteReview/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.ReviewsController",
+    "Method": "EditReview",
+    "RelativePath": "api/Reviews/EditReview/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedReview",
+        "Type": "LibraryAPI.Domain.Models.Review",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryAPI.Controllers.ReviewsController",
+    "Method": "GetReviewById",
+    "RelativePath": "api/Reviews/GetReviewById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
