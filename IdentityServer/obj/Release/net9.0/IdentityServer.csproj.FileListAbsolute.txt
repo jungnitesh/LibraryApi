@@ -10,3 +10,4 @@ C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\Identit
 C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\refint\IdentityServer.dll
 C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.pdb
 C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\ref\IdentityServer.dll
+C:\Users\nites\source\repos\LibraryAPI\IdentityServer\obj\Release\net9.0\IdentityServer.sourcelink.json
