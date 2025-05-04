@@ -1,4 +1,4 @@
-﻿using LibraryAPI.Mapper;
+﻿using LibraryAPI.Common;
 using Microsoft.OpenApi.Models;
 
 namespace LibraryAPI.Extensions

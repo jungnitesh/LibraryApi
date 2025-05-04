@@ -13,6 +13,6 @@ namespace LibraryAPI.Domain.Models
         public DateTime DueDate { get; set; }
         public DateTime? ReturnedDate { get; set; }
         [ForeignKey("BookId")]
-        public Book LentBook { get; set; }
+        public Book LentBook { get; set; } 
     }
 }

@@ -13,6 +13,7 @@ namespace LibraryAPI.Domain.Models
         [Range(1, 5)]
         public int RatingValue { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
         [ForeignKey("BookId")]
         public Book ReviewdBook { get; set; } = new Book();
     }

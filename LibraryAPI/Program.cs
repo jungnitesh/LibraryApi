@@ -1,9 +1,10 @@
 using IdentityServer.Data;
 using IdentityServer.Models;
-using LibraryAPI.Data;
+using LibraryAPI.Application.Contracts.ServiceContracts;
+using LibraryAPI.Application.Services;
 using LibraryAPI.Extensions;
-using LibraryAPI.Services;
-using LibraryAPI.Services.Contracts;
+using LibraryAPI.Infrastructure;
+using LibraryAPI.Middleware;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -71,9 +72,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseMiddleware<ApiKeyMiddleware>();
-
+app.UseGlobalExceptionMiddleWare();
+app.UseApiKeyMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();

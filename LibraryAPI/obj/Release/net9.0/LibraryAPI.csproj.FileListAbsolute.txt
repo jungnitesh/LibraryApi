@@ -174,3 +174,4 @@ C:\Users\nites\source\repos\LibraryAPI\LibraryAPI\bin\Release\net9.0\Microsoft.A
 C:\Users\nites\source\repos\LibraryAPI\LibraryAPI\bin\Release\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\nites\source\repos\LibraryAPI\LibraryAPI\bin\Release\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\nites\source\repos\LibraryAPI\LibraryAPI\bin\Release\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nites\source\repos\LibraryAPI\LibraryAPI\obj\Release\net9.0\LibraryAPI.sourcelink.json

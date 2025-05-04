@@ -1,5 +1,6 @@
-﻿using LibraryAPI.Domain.Models;
-using LibraryAPI.Services.Contracts;
+﻿using LibraryAPI.Application.Contracts.ServiceContracts;
+using LibraryAPI.Application.Dtos;
+using LibraryAPI.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace LibraryAPI.Controllers
 {
@@ -9,78 +10,48 @@ namespace LibraryAPI.Controllers
     {
         [HttpPost]
         [Route("LendBook")]
-        public async Task<IActionResult> LendBook([FromBody] BookLend bookLend)
+        public async Task<IActionResult> LendBook([FromBody] BookLendDto bookLendDto)
         {
-            try
-            {
-                var result = await libraryService.LendBookAsync(bookLend);
+            
+                var result = await libraryService.LendBookAsync(bookLendDto);
                 if (!result)
                 {
                     return BadRequest("Failed to lend the book. The book might not be available.");
                 }
                 return Ok("Book lent successfully.");
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while lending the book.");
-            }
         }
 
         [HttpPost]
         [Route("ReturnBook/{bookLendId}")]
-        public async Task<IActionResult> ReturnBook(int bookLendId)
+        public async Task<IActionResult> ReturnBook([FromBody] BookReturnDto bookReturnDto)
         {
-            try
-            {
-                var result = await libraryService.ReturnBookAsync(bookLendId);
+                var result = await libraryService.ReturnBookAsync(bookReturnDto);
                 if (!result)
                 {
                     return BadRequest("Failed to return the book. The book lend record might not exist or the book is already returned.");
                 }
                 return Ok("Book returned successfully.");
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while returning the book.");
-            }
         }
 
         [HttpGet]
         [Route("GetFeaturedBooks")]
         public async Task<IActionResult> GetFeaturedBooks()
         {
-            try
-            {
                 var featuredBooks = await libraryService.GetFeaturedBooks();
                 return Ok(featuredBooks);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while retrieving featured books.");
-            }
         }
 
         [HttpPost]
         [Route("MarkBookAsFeatured")]
-        public async Task<IActionResult> MarkBookAsFeatured()
+        public async Task<IActionResult> MarkBookAsFeatured(int bookId)
         {
-            try
-            {
-                var result = await libraryService.MarkBookAsFeatured();
+                var result = await libraryService.MarkBookAsFeatured(bookId);
                 if (!result)
                 {
                     return BadRequest("Failed to mark a book as featured. No eligible book found.");
                 }
                 return Ok("Book marked as featured successfully.");
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while marking a book as featured.");
-            }
+           
         }
     }
 }

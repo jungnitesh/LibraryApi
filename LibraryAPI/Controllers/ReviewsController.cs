@@ -1,5 +1,6 @@
-﻿using LibraryAPI.Domain.Models;
-using LibraryAPI.Services.Contracts;
+﻿using LibraryAPI.Application.Contracts.ServiceContracts;
+using LibraryAPI.Application.Dtos;
+using LibraryAPI.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -12,22 +13,15 @@ namespace LibraryAPI.Controllers
     {
         [HttpPost]
         [Route("CreateReview")]
-        public async Task<IActionResult> CreateReview([FromBody] Review review)
+        public async Task<IActionResult> CreateReview([FromBody] ReviewDto reviewDto)
         {
-            try
-            {
-                var result = await reviewService.AddReview(review);
+           
+                var result = await reviewService.AddReview(reviewDto);
                 if (!result)
                 {
                     return StatusCode(500, "Failed to create the review.");
                 }
-                return Ok(review);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while creating the review.");
-            }
+                return Ok(reviewDto);
         }
 
         [HttpGet]
@@ -64,8 +58,6 @@ namespace LibraryAPI.Controllers
 
                 existingReview.CommentText = updatedReview.CommentText;
                 existingReview.RatingValue = updatedReview.RatingValue;
-                existingReview.CreatedAt = updatedReview.CreatedAt;
-
                 var result = await reviewService.UpdateReview(existingReview);
                 if (!result)
                 {
@@ -92,7 +84,7 @@ namespace LibraryAPI.Controllers
                     return NotFound("Review not found.");
                 }
 
-                var result = await reviewService.DeleteReview(review);
+                var result = await reviewService.DeleteReview(id);
                 if (!result)
                 {
                     return StatusCode(500, "Failed to delete the review.");

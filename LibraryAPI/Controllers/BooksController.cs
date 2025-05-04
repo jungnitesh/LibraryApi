@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using LibraryAPI.Services.Contracts;
 using Microsoft.AspNetCore.Authorization;
-using LibraryAPI.Data.Dtos;
 using AutoMapper;
-using Swashbuckle.Swagger.Annotations;
+using Swashbuckle.AspNetCore.Annotations;
+using LibraryAPI.Domain.Models;
+using LibraryAPI.Application.Dtos;
+using LibraryAPI.Application.Contracts.ServiceContracts;
 
 namespace LibraryAPI.Controllers
 {
@@ -15,101 +16,51 @@ namespace LibraryAPI.Controllers
         [Route("AddBook")]
         [Authorize(Roles = "Admin")]
         [SwaggerOperation(
-    Summary = "Test endpoint with both API key and JWT",
-    Description = "Requires both JWT Bearer token and API key"
+         Summary = "Adds New book to Library",
+         Description = "Requires both JWT Bearer token and API key with Book details. Stores Book in the database",
+         OperationId = "AddBook",
+         Tags = new[] { "Books" } 
 )]
-        [SwaggerSecurityRequirement("Bearer")]
-        [SwaggerSecurityRequirement("ApiKey")]
         public async Task<IActionResult> AddBook([FromBody] AddBookDto addBookDto)
         {
-            try
-            {
-                
-                var result = await bookService.AddBook(addBookDto);
-                if (result == 0)
-                {
-                    return StatusCode(500, "Failed to add the book.");
-                }
-                return Ok(addBookDto);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while adding the book.");
-            }
+             await bookService.AddBook(addBookDto);
+             return Ok(new { message = "Book added successfully." });
         }
 
         [HttpPut]
         [Route("UpdateBook/{id}")]
-        public async Task<IActionResult> UpdateBook(int id, [FromBody] UpdateBookDto updatedBookDto)
+        public async Task<ActionResult<UpdateBookDto>> UpdateBook(int id, [FromBody] UpdateBookDto updatedBookDto)
         {
-            try
-            {
-                
-                var result = await bookService.UpdateBook(updatedBookDto);
-                if (result == 0)
-                {
-                    return StatusCode(500, "Failed to update the book.");
-                }
+           
+                await bookService.UpdateBook(updatedBookDto);
                 return Ok(updatedBookDto);
-            }
-            catch (Exception ex)
-            {
                 // Log the exception (optional)
-                return StatusCode(501, "An error occurred while updating the book.");
-            }
         }
 
         [HttpGet]
         [Route("GetBook/{id}")]
-        public async Task<IActionResult> GetBook(int id)
+        public async Task<ActionResult<Book>> GetBook(int id)
         {
-            try
-            {
+           
                 var book = await bookService.GetBook(id);
-                if (book == null)
-                {
-                    return NotFound("Book not found.");
-                }
                 return Ok(book);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while retrieving the book.");
-            }
+           // Log the exception (optional)
         }
 
         [HttpDelete]
         [Route("DeleteBook/{id}")]
-        public async Task<IActionResult> DeleteBook(int id)
+        public async Task<ActionResult<string>> DeleteBook(int id)
         {
-            try
-            {
                 await bookService.DeleteBook(id);
-                return Ok("Book deleted successfully.");
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while deleting the book.");
-            }
+                return Ok(new { message = "Book deleted successfully." });
         }
 
         [HttpGet]
         [Route("GetAllBooks")]
         public async Task<IActionResult> GetAllBooks()
         {
-            try
-            {
                 var books = await bookService.GetAllBooks();
                 return Ok(books);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception (optional)
-                return StatusCode(501, "An error occurred while retrieving the books.");
-            }
         }
     }
 }
